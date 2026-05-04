@@ -1,7 +1,11 @@
 import { type FormEvent, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const WHATSAPP_CTA =
+  "https://wa.me/5511978603500?text=Ol%C3%A1%21%20Vim%20do%20site%20RAE%20Nutrition.";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,7 +39,11 @@ export function CTASection() {
   };
 
   return (
-    <section ref={root} id="contact" className="scroll-mt-20 py-20 md:py-28">
+    <section
+      ref={root}
+      id="contact"
+      className="scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] border-t border-border/40 bg-gradient-to-b from-muted/50 via-background to-secondary/40 py-16 dark:from-muted/25 dark:via-background dark:to-secondary/35 sm:py-20 md:py-28"
+    >
       <div className="container">
         <div
           className="cta-card gsap-hidden gpu-accelerated mx-auto w-full max-w-3xl overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-primary/10 via-card to-accent/20 p-6 shadow-glow sm:rounded-3xl md:p-8 lg:max-w-4xl"
@@ -47,12 +55,21 @@ export function CTASection() {
                 Fale conosco
               </p>
               <h2 className="mb-3 text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl md:leading-tight lg:text-[1.65rem] xl:text-[1.85rem]">
-                Pronto para reprogramar sua alimentação?
+                Fale com a RAE e receba uma proposta em até 4 horas úteis.
               </h2>
               <p className="text-sm text-muted-foreground md:text-base">
-                Entre em contato. Conte um pouco sobre você ou sobre a sua empresa — retornamos com
-                o próximo passo.
+                Sua concorrente já sabe quais colaboradores estão em risco metabólico. Você ainda não.
+                Sem compromisso — você decide depois de ver a proposta.
               </p>
+              <a
+                href={WHATSAPP_CTA}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-primary underline-offset-4 hover:underline"
+              >
+                <MessageCircle className="h-4 w-4 shrink-0" aria-hidden />
+                Falar no WhatsApp · (11) 97860-3500
+              </a>
             </div>
             <div className="rounded-xl border border-border bg-card/80 p-5 backdrop-blur-sm md:p-6">
               {sent ? (
@@ -70,7 +87,7 @@ export function CTASection() {
                         id="first"
                         name="first"
                         required
-                        className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none ring-primary/30 focus:ring-2 md:px-4 md:py-2.5"
+                        className="min-h-11 w-full rounded-lg border border-border bg-background px-3 py-2.5 text-base outline-none ring-primary/30 focus:ring-2 md:px-4"
                       />
                     </div>
                     <div>
@@ -81,7 +98,7 @@ export function CTASection() {
                         id="last"
                         name="last"
                         required
-                        className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none ring-primary/30 focus:ring-2 md:px-4 md:py-2.5"
+                        className="min-h-11 w-full rounded-lg border border-border bg-background px-3 py-2.5 text-base outline-none ring-primary/30 focus:ring-2 md:px-4"
                       />
                     </div>
                   </div>
@@ -93,7 +110,7 @@ export function CTASection() {
                       id="phone"
                       name="phone"
                       type="tel"
-                      className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none ring-primary/30 focus:ring-2 md:px-4 md:py-2.5"
+                      className="min-h-11 w-full rounded-lg border border-border bg-background px-3 py-2.5 text-base outline-none ring-primary/30 focus:ring-2 md:px-4"
                     />
                   </div>
                   <div>
@@ -105,7 +122,7 @@ export function CTASection() {
                       name="email"
                       type="email"
                       required
-                      className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none ring-primary/30 focus:ring-2 md:px-4 md:py-2.5"
+                      className="min-h-11 w-full rounded-lg border border-border bg-background px-3 py-2.5 text-base outline-none ring-primary/30 focus:ring-2 md:px-4"
                     />
                   </div>
                   <div>
@@ -115,7 +132,7 @@ export function CTASection() {
                     <select
                       id="topic"
                       name="topic"
-                      className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none ring-primary/30 focus:ring-2 md:px-4 md:py-2.5"
+                      className="min-h-11 w-full rounded-lg border border-border bg-background px-3 py-2.5 text-base outline-none ring-primary/30 focus:ring-2 md:px-4"
                       defaultValue=""
                       required
                     >
@@ -138,10 +155,10 @@ export function CTASection() {
                       rows={3}
                       required
                       placeholder="Digite sua mensagem..."
-                      className="w-full resize-none rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none ring-primary/30 focus:ring-2 md:px-4 md:py-2.5"
+                      className="min-h-[5.5rem] w-full resize-y rounded-lg border border-border bg-background px-3 py-2.5 text-base outline-none ring-primary/30 focus:ring-2 md:px-4"
                     />
                   </div>
-                  <Button type="submit" className="w-full" size="default">
+                  <Button type="submit" className="min-h-12 w-full touch-manipulation" size="default">
                     Enviar
                   </Button>
                 </form>

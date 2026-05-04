@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, Building2, Leaf, ShieldCheck } from "lucide-react";
@@ -24,14 +24,23 @@ const services = [
   {
     icon: ShieldCheck,
     title: "SIPAT RAE",
-    badges: ["SIPAT", "Prevenção", "Eventos"],
+    badges: ["NR-5", "InBody", "Relatório 24h"],
     description:
-      "Programas alinhados às necessidades da sua SIPAT — conteúdo estratégico, interação e nutrição aplicada ao contexto da empresa.",
+      "Transforme a obrigação da NR-5 em diagnóstico real: palestra adaptada ao seu setor, bioimpedância InBody individual e relatório executivo de saudabilidade em até 24h — com dados que o RH apresenta à diretoria e engajamento médio +62% vs. SIPAT tradicional.",
   },
 ];
 
 export function ServicesSection() {
   const root = useRef<HTMLElement>(null);
+  const [fineHover, setFineHover] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const sync = () => setFineHover(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
 
   useLayoutEffect(() => {
     const el = root.current;
@@ -65,7 +74,11 @@ export function ServicesSection() {
   }, []);
 
   return (
-    <section ref={root} id="services" className="scroll-mt-20 bg-muted/30 py-20 md:py-28">
+    <section
+      ref={root}
+      id="services"
+      className="scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] border-t border-border/30 bg-background py-16 sm:py-20 md:py-28"
+    >
       <div className="container">
         <p className="services-head gsap-hidden mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
           Soluções para você e para sua empresa
@@ -81,8 +94,8 @@ export function ServicesSection() {
           {services.map(({ icon: Icon, title, badges, description }) => (
             <LiquidGlass
               key={title}
-              className="service-card gsap-hidden group flex h-full flex-col p-8 dark:bg-white/[0.04]"
-              whileHover={{ y: -4 }}
+              className="service-card gsap-hidden group flex h-full flex-col p-6 sm:p-8 dark:bg-white/[0.04]"
+              whileHover={fineHover ? { y: -4 } : undefined}
               transition={{ type: "spring", stiffness: 320, damping: 24 }}
             >
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/15 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">

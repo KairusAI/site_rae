@@ -1,25 +1,25 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { AlertCircle, Layers, TrendingDown } from "lucide-react";
+import { BarChart3, FileWarning, Scale } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const items = [
   {
-    icon: Layers,
-    title: "Protocolos genéricos",
-    text: "Planilhas e dietas que não conversam com a rotina real — e desmotivam no primeiro mês.",
+    icon: FileWarning,
+    title: "Cumpre a lei, sem dado",
+    text: "A SIPAT tradicional entrega certificado, mas o RH gasta orçamento e a empresa segue sem saber o risco real da equipe — palestra genérica e nenhum indicador para a liderança.",
   },
   {
-    icon: AlertCircle,
-    title: "Falta de estratégia",
-    text: "Nutrição tratada como lista de alimentos, sem vínculo com metabolismo, cultura e hábitos sustentáveis.",
+    icon: BarChart3,
+    title: "Risco invisível",
+    text: "Cerca de 40% dos colaboradores têm excesso de peso. Sem diagnóstico, é difícil agir: sinistralidade alta e reajuste do plano de saúde acima de 20% ao ano afetam direto o CFO.",
   },
   {
-    icon: TrendingDown,
-    title: "Resultados de curto prazo",
-    text: "Oscilação de peso e adesão frágil quando não há reprogramação alimentar estruturada.",
+    icon: Scale,
+    title: "O problema não é falta de vontade",
+    text: "Doenças crônicas ligadas ao peso são a principal causa de afastamentos prolongados. O gargalo costuma ser falta de dado acionável — não falta de interesse do time.",
   },
 ];
 
@@ -58,16 +58,20 @@ export function ProblemSection() {
   }, []);
 
   return (
-    <section ref={root} id="problem" className="scroll-mt-20 bg-muted/40 py-20 md:py-28">
+    <section
+      ref={root}
+      id="problem"
+      className="scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] border-t border-border/50 bg-muted/55 py-16 dark:bg-muted/25 sm:py-20 md:py-28"
+    >
       <div className="container">
         <p className="problem-head gsap-hidden mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-          O desafio
+          Por que a SIPAT atual costuma falhar
         </p>
         <h2 className="problem-head gsap-hidden mb-4 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl lg:text-[2.25rem] lg:leading-tight">
-          Empresas e pessoas sabem que precisam de nutrição de verdade
+          A SIPAT tradicional cumpre a lei. Mas não gera nenhum dado.
         </h2>
-        <p className="problem-head gsap-hidden mb-12 max-w-2xl text-base text-muted-foreground md:mb-14 md:text-lg">
-          O problema costuma ser o mesmo: falta de método, de personalização e de adesão no tempo.
+        <p className="problem-head gsap-hidden mb-12 max-w-2xl text-base font-medium text-foreground md:mb-14 md:text-lg">
+          40% da sua equipe tem excesso de peso. Sem diagnóstico, você não sabe quais são.
         </p>
         <div className="grid gap-6 md:grid-cols-3">
           {items.map(({ icon: Icon, title, text }, index) => (

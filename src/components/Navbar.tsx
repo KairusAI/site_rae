@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { RAE_LOGO_SRC } from "@/lib/branding";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { label: "Serviços", href: "#services" },
   { label: "Sobre", href: "#about" },
+  { label: "FAQ", href: "#faq" },
   { label: "Depoimentos", href: "#testimonials" },
   { label: "Contato", href: "#contact" },
 ];
@@ -41,21 +43,28 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "fixed top-0 z-50 w-full border-b transition-colors duration-300",
+          "fixed top-0 z-50 w-full border-b pt-[env(safe-area-inset-top,0px)] transition-colors duration-300",
           scrolled
-            ? "border-border/80 bg-background/85 backdrop-blur-md shadow-sm"
-            : "border-transparent bg-background/40 backdrop-blur-sm"
+            ? "border-border/80 bg-background/90 backdrop-blur-md shadow-sm"
+            : "border-transparent bg-background/50 backdrop-blur-sm"
         )}
       >
-        <div className="container flex h-14 items-center justify-between px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
-          <Link to="/" className="flex items-center gap-2 font-semibold tracking-tight text-foreground">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-sm text-primary-foreground">
-              R
-            </span>
-            <span className="hidden sm:inline">RAE Nutrition</span>
+        <div className="container flex min-h-[3.75rem] items-center justify-between py-1 md:min-h-[4rem]">
+          <Link
+            to="/"
+            className="flex min-h-11 min-w-0 items-center py-0.5 pr-2 touch-manipulation md:min-h-12"
+          >
+            <img
+              src={RAE_LOGO_SRC}
+              alt="RAE Nutrition"
+              className="h-10 w-auto max-h-11 max-w-[min(16rem,58vw)] shrink-0 object-contain object-left sm:h-11 sm:max-h-12 sm:max-w-[18rem] md:h-12 md:max-w-[20rem]"
+              width={512}
+              height={512}
+              decoding="async"
+            />
           </Link>
 
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-6 lg:gap-8 md:flex">
             {navLinks.map((l) => (
               <button
                 key={l.href}
@@ -73,8 +82,9 @@ export function Navbar() {
 
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-border md:hidden"
+            className="flex h-11 min-h-[44px] w-11 min-w-[44px] touch-manipulation items-center justify-center rounded-lg border border-border active:bg-muted md:hidden"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -88,30 +98,33 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-md md:hidden"
-            style={{ top: 56 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 flex flex-col bg-background/98 backdrop-blur-md md:hidden"
+            style={{
+              paddingTop: "max(4rem, calc(3.75rem + env(safe-area-inset-top, 0px)))",
+              paddingBottom: "env(safe-area-inset-bottom, 0px)",
+            }}
           >
             <motion.nav
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 12 }}
-              className="container flex flex-col gap-2 px-6 py-8"
+              exit={{ opacity: 0, y: 8 }}
+              className="container flex flex-1 flex-col gap-1 overflow-y-auto overscroll-contain py-4"
             >
               {navLinks.map((l, i) => (
                 <motion.button
                   key={l.href}
                   type="button"
-                  custom={i}
-                  initial={{ opacity: 0, x: -12 }}
+                  initial={{ opacity: 0, x: -8 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.05 * i }}
-                  className="rounded-lg px-4 py-3 text-left text-lg font-medium text-foreground hover:bg-muted"
+                  transition={{ delay: 0.04 * i }}
+                  className="min-h-[48px] touch-manipulation rounded-xl px-4 py-3 text-left text-base font-medium text-foreground active:bg-muted"
                   onClick={() => scrollTo(l.href)}
                 >
                   {l.label}
                 </motion.button>
               ))}
-              <Button className="mt-4 w-full" onClick={() => scrollTo("#contact")}>
+              <Button className="mt-4 min-h-12 w-full touch-manipulation" onClick={() => scrollTo("#contact")}>
                 Fale conosco
               </Button>
             </motion.nav>

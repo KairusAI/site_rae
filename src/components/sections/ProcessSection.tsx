@@ -8,23 +8,27 @@ gsap.registerPlugin(ScrollTrigger);
 const steps = [
   {
     n: "01",
-    title: "Diagnóstico",
-    text: "Entendemos objetivos, rotina e contexto — individual ou corporativo.",
+    title: "Alinhamento e logística",
+    text: "Briefing com o RH para entender perfil da equipe, setor e objetivos. A RAE prepara InBody, material educativo e roteiro da palestra — sem trabalho operacional extra para o time interno.",
+    badge: "Pré-evento",
   },
   {
     n: "02",
-    title: "Plano RAE",
-    text: "Desenhamos a reprogramação alimentar estratégica com metas claras.",
+    title: "Palestra interativa",
+    text: "Nutrição estratégica adaptada ao perfil da empresa — não é palestra genérica. Dinâmica, linguagem acessível e aplicação prática, conduzida por nutricionistas RAE.",
+    badge: "Até 200 pessoas",
   },
   {
     n: "03",
-    title: "Acompanhamento",
-    text: "Consultas, app e suporte para manter adesão e ajustar o percurso.",
+    title: "Bioimpedância InBody",
+    text: "Cada colaborador com avaliação individual: gordura, massa muscular, hidratação e distribuição. Dois pesos iguais podem ser perfis de saúde completamente diferentes.",
+    badge: "Até 50 avaliações",
   },
   {
     n: "04",
-    title: "Evolução",
-    text: "Medimos resultados e evoluímos o plano junto com você ou com a empresa.",
+    title: "Relatório executivo",
+    text: "Entregue ao RH em até 24h: IMC médio, % com risco metabólico alto, perfil coletivo e comparativo por área ou turno — formato pronto para a diretoria.",
+    badge: "Em até 24h",
   },
 ];
 
@@ -52,16 +56,20 @@ export function ProcessSection() {
   }, []);
 
   return (
-    <section ref={root} id="process" className="scroll-mt-20 py-20 md:py-28">
+    <section
+      ref={root}
+      id="process"
+      className="scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] border-t border-border/40 bg-secondary/65 py-16 dark:bg-secondary/45 sm:py-20 md:py-28"
+    >
       <div className="container">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
           Como funciona
         </p>
-        <h2 className="mb-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl lg:text-[2.25rem] lg:leading-tight">
-          Simples, transparente e focado em resultado
+        <h2 className="mb-4 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl lg:text-[2.25rem] lg:leading-tight">
+          Da assinatura do contrato ao relatório para a diretoria — a RAE executa tudo.
         </h2>
         <p className="mb-12 max-w-2xl text-base text-muted-foreground md:mb-14 md:text-lg">
-          Quatro etapas claras, do primeiro contato à evolução contínua.
+          O RH assina, comunica a data e recebe o relatório. A gente cuida do resto.
         </p>
 
         {/* Mobile / tablet: linha do tempo vertical */}
@@ -71,7 +79,7 @@ export function ProcessSection() {
             aria-hidden
           />
           <ol className="relative m-0 list-none p-0">
-            {steps.map(({ n, title, text }) => (
+            {steps.map(({ n, title, text, badge }) => (
               <li
                 key={n}
                 className="process-step gsap-hidden flex gap-4 pb-10 last:pb-0 md:gap-5 md:pb-12"
@@ -83,7 +91,10 @@ export function ProcessSection() {
                 </div>
                 <div className="min-w-0 flex-1 rounded-2xl border border-primary/20 bg-card/90 p-5 shadow-[0_8px_28px_-12px_hsl(var(--primary)/0.2)] ring-1 ring-primary/5 md:p-6">
                   <h3 className="mb-2 text-base font-semibold text-foreground md:text-lg">{title}</h3>
-                  <p className="text-sm leading-relaxed text-foreground/75">{text}</p>
+                  <p className="mb-3 text-sm leading-relaxed text-foreground/75">{text}</p>
+                  <span className="inline-block rounded-full bg-primary/10 px-2.5 py-0.5 text-[11px] font-medium text-primary">
+                    {badge}
+                  </span>
                 </div>
               </li>
             ))}
@@ -97,7 +108,7 @@ export function ProcessSection() {
             aria-hidden
           />
           <ol className="relative m-0 grid list-none grid-cols-4 gap-5 p-0 xl:gap-6">
-            {steps.map(({ n, title, text }) => (
+            {steps.map(({ n, title, text, badge }) => (
               <li
                 key={n}
                 className="process-step gsap-hidden flex flex-col items-center text-center"
@@ -112,7 +123,10 @@ export function ProcessSection() {
                     </span>
                     <h3 className="text-base font-semibold leading-snug text-foreground">{title}</h3>
                   </div>
-                  <p className="text-sm leading-relaxed text-foreground/75">{text}</p>
+                  <p className="mb-3 text-sm leading-relaxed text-foreground/75">{text}</p>
+                  <span className="inline-block rounded-full bg-primary/10 px-2.5 py-0.5 text-[11px] font-medium text-primary">
+                    {badge}
+                  </span>
                 </div>
               </li>
             ))}

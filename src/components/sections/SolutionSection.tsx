@@ -8,18 +8,18 @@ gsap.registerPlugin(ScrollTrigger);
 const pillars = [
   {
     icon: Target,
-    title: "Metodologia RAE",
-    text: "Reprogramação Alimentar Estratégica — desenhamos o caminho a partir do seu contexto, não de fórmulas prontas.",
+    title: "Diagnóstico + relatório",
+    text: "A SIPAT RAE transforma obrigação da NR-5 em diagnóstico real: dados individuais por bioimpedância InBody e relatório executivo em até 24h para o RH apresentar à diretoria.",
   },
   {
     icon: HeartPulse,
-    title: "Ciência + hábito",
-    text: "Unimos evidências nutricionais com mudança de comportamento para adesão contínua.",
+    title: "Engajamento que mede",
+    text: "+62% de engajamento vs. SIPAT tradicional — colaboradores participam porque recebem valor individual, não só obrigação.",
   },
   {
     icon: CheckCircle2,
-    title: "Resultados mensuráveis",
-    text: "Indicadores claros para acompanhar evolução — individualmente ou em programas corporativos.",
+    title: "ROI que o CFO enxerga",
+    text: "Sinistralidade alta pesa no plano de saúde; programas preventivos estruturados mostram ROI documentado — a SIPAT RAE é o primeiro dado real que o RH leva para reduzir esse custo.",
   },
 ];
 
@@ -54,24 +54,29 @@ export function SolutionSection() {
   }, []);
 
   return (
-    <section ref={root} id="solution" className="scroll-mt-20 py-20 md:py-28">
+    <section
+      ref={root}
+      id="solution"
+      className="scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] border-t border-border/35 bg-accent/45 py-16 dark:bg-accent/18 sm:py-20 md:py-28"
+    >
       <div className="container">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 lg:items-start">
           <div className="max-w-2xl lg:max-w-none lg:pt-1">
             <p className="solution-intro gsap-hidden mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              A solução
+              Impacto direto
             </p>
             <h2 className="solution-intro gsap-hidden mb-5 text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl lg:text-[2.25rem] lg:leading-tight">
-              Nutrição estratégica construída para o seu momento
+              O problema custa caro. A prevenção paga de volta.
             </h2>
             <div className="solution-intro gsap-hidden space-y-4 text-base text-muted-foreground md:text-lg">
               <p>
-                Nossa equipe é formada por nutricionistas qualificados e especialistas na metodologia
-                RAE. Atuamos de forma integrada, combinando conhecimento técnico, ciência e inovação.
+                Cada colaborador doente custa muito mais que o salário dele: custo médio em torno de
+                R$ 1.800/ano só em absenteísmo — e na indústria pode ultrapassar R$ 4.500. Doenças
+                crônicas ligadas ao peso concentram sinistralidade e afastamentos.
               </p>
               <p>
-                Cada jornada é única. Cada plano tem propósito claro — para você, para o seu time ou
-                para a cultura da sua empresa.
+                A RAE une nutricionistas, método e dados — da SIPAT ao programa contínuo — para sair
+                do “evento obrigatório” e entrar em gestão ativa de saúde com números para a diretoria.
               </p>
             </div>
           </div>
