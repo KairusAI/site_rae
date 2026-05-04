@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 88 35% 97%;
+    --foreground: 158 45% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 158 45% 14%;
+    --primary: 158 72% 22%;
+    --primary-foreground: 88 40% 98%;
+    --secondary: 130 28% 92%;
+    --secondary-foreground: 158 50% 18%;
+    --muted: 120 15% 93%;
+    --muted-foreground: 158 12% 40%;
+    --accent: 100 35% 88%;
+    --accent-foreground: 158 55% 16%;
+    --border: 130 18% 88%;
+    --radius: 0.75rem;
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(88 35% 97%) 0%,
+      hsl(100 40% 94%) 45%,
+      hsl(130 32% 92%) 100%
+    );
+    --gradient-accent: linear-gradient(120deg, hsl(158 72% 26%), hsl(130 40% 42%));
+    --shadow-glow: 0 0 60px -12px hsl(158 72% 22% / 0.35);
+  }
+
+  .dark {
+    --background: 158 30% 8%;
+    --foreground: 88 25% 96%;
+    --card: 158 28% 11%;
+    --card-foreground: 88 25% 96%;
+    --primary: 130 42% 48%;
+    --primary-foreground: 158 40% 10%;
+    --secondary: 158 22% 16%;
+    --secondary-foreground: 88 30% 95%;
+    --muted: 158 18% 18%;
+    --muted-foreground: 88 15% 70%;
+    --accent: 158 25% 20%;
+    --accent-foreground: 88 35% 95%;
+    --border: 158 18% 20%;
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(158 30% 8%) 0%,
+      hsl(158 28% 12%) 100%
+    );
+    --gradient-accent: linear-gradient(120deg, hsl(130 42% 42%), hsl(158 55% 35%));
+    --shadow-glow: 0 0 50px -10px hsl(130 42% 48% / 0.35);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Em telas maiores, reduz o rem base (~igual a ver tudo a 90% no zoom 100%). Mobile mantém 16px para leitura e toque. */
+  @media (min-width: 768px) {
+    html {
+      font-size: 93.75%;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    html {
+      font-size: 90%;
+    }
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-gradient-accent {
+    background-image: var(--gradient-accent);
+  }
+
+  .gsap-hidden {
+    visibility: hidden;
+  }
+
+  .gsap-animated {
+    transition: none !important;
+  }
+
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+}
