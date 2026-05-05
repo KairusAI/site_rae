@@ -55,7 +55,10 @@ export function WhyRaeSection() {
       id="about"
       className="relative min-h-[min(46vh,24rem)] scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] overflow-hidden border-t border-border/40 bg-background py-16 sm:py-20 md:min-h-[min(52vh,28rem)] md:py-28"
     >
-      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden>
+      <div
+        className="pointer-events-none absolute inset-0 z-0 hidden overflow-hidden sm:block"
+        aria-hidden
+      >
         <img
           src={RAE_MEAL_IMAGE_SRC}
           alt=""
@@ -66,9 +69,9 @@ export function WhyRaeSection() {
           height={900}
         />
       </div>
-      {/* Só escurece a faixa onde está o texto; a imagem à direita fica sem véu */}
+      {/* Desktop: véu só na faixa do texto para legibilidade (mobile: imagem oculta, sem véu) */}
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-[min(100%,42rem)] bg-gradient-to-r from-background from-[8%] via-background/55 via-[55%] to-transparent sm:w-[min(100%,48rem)] sm:via-[50%] dark:from-background dark:via-background/45"
+        className="pointer-events-none absolute inset-y-0 left-0 z-[1] hidden w-[min(100%,48rem)] bg-gradient-to-r from-background from-[8%] via-background/55 via-[50%] to-transparent dark:from-background dark:via-background/45 sm:block"
         aria-hidden
       />
 
