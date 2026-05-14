@@ -4,51 +4,53 @@
 
 @layer base {
   :root {
-    --background: 88 35% 97%;
-    --foreground: 158 45% 14%;
+    /* RAE Nutrition 2026 brand system */
+    --background: 38 58% 95%;
+    --foreground: 0 0% 7%;
     --card: 0 0% 100%;
-    --card-foreground: 158 45% 14%;
-    --primary: 158 72% 22%;
-    --primary-foreground: 88 40% 98%;
-    --secondary: 130 28% 92%;
-    --secondary-foreground: 158 50% 18%;
-    --muted: 120 15% 93%;
-    --muted-foreground: 158 12% 40%;
-    --accent: 100 35% 88%;
-    --accent-foreground: 158 55% 16%;
-    --border: 130 18% 88%;
+    --card-foreground: 0 0% 7%;
+    --primary: 26 91% 53%;
+    --primary-foreground: 0 0% 7%;
+    --secondary: 113 45% 50%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 38 32% 91%;
+    --muted-foreground: 0 0% 43%;
+    --accent: 47 100% 59%;
+    --accent-foreground: 0 0% 7%;
+    --border: 45 8% 80%;
     --radius: 0.75rem;
     --gradient-hero: linear-gradient(
       135deg,
-      hsl(88 35% 97%) 0%,
-      hsl(100 40% 94%) 45%,
-      hsl(130 32% 92%) 100%
+      hsl(0 0% 100%) 0%,
+      hsl(38 58% 95%) 48%,
+      hsl(26 91% 53% / 0.16) 100%
     );
-    --gradient-accent: linear-gradient(120deg, hsl(158 72% 26%), hsl(130 40% 42%));
-    --shadow-glow: 0 0 60px -12px hsl(158 72% 22% / 0.35);
+    --gradient-accent: linear-gradient(120deg, hsl(26 91% 53%), hsl(113 45% 50%));
+    --shadow-glow: 0 0 60px -18px hsl(26 91% 53% / 0.45);
   }
 
   .dark {
-    --background: 158 30% 8%;
-    --foreground: 88 25% 96%;
-    --card: 158 28% 11%;
-    --card-foreground: 88 25% 96%;
-    --primary: 130 42% 48%;
-    --primary-foreground: 158 40% 10%;
-    --secondary: 158 22% 16%;
-    --secondary-foreground: 88 30% 95%;
-    --muted: 158 18% 18%;
-    --muted-foreground: 88 15% 70%;
-    --accent: 158 25% 20%;
-    --accent-foreground: 88 35% 95%;
-    --border: 158 18% 20%;
+    --background: 0 0% 7%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 16%;
+    --card-foreground: 0 0% 100%;
+    --primary: 26 91% 53%;
+    --primary-foreground: 0 0% 7%;
+    --secondary: 113 45% 50%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 0 0% 16%;
+    --muted-foreground: 45 8% 80%;
+    --accent: 47 100% 59%;
+    --accent-foreground: 0 0% 7%;
+    --border: 0 0% 24%;
     --gradient-hero: linear-gradient(
       135deg,
-      hsl(158 30% 8%) 0%,
-      hsl(158 28% 12%) 100%
+      hsl(0 0% 7%) 0%,
+      hsl(0 0% 16%) 58%,
+      hsl(26 91% 53% / 0.2) 100%
     );
-    --gradient-accent: linear-gradient(120deg, hsl(130 42% 42%), hsl(158 55% 35%));
-    --shadow-glow: 0 0 50px -10px hsl(130 42% 48% / 0.35);
+    --gradient-accent: linear-gradient(120deg, hsl(26 91% 53%), hsl(113 45% 50%));
+    --shadow-glow: 0 0 50px -14px hsl(26 91% 53% / 0.45);
   }
 
   * {

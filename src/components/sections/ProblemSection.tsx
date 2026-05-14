@@ -61,7 +61,7 @@ export function ProblemSection() {
     <section
       ref={root}
       id="problem"
-      className="scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] border-t border-border/50 bg-muted/55 py-16 dark:bg-muted/25 sm:py-20 md:py-28"
+      className="scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] border-t border-secondary/25 bg-secondary/15 py-16 dark:bg-secondary/10 sm:py-20 md:py-28"
     >
       <div className="container">
         <p className="problem-head gsap-hidden mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary">

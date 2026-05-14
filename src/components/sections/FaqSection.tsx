@@ -126,7 +126,7 @@ export function FaqSection() {
     <section
       ref={root}
       id="faq"
-      className="scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] border-t border-border/35 bg-muted/40 py-16 dark:bg-muted/20 sm:py-20 md:py-28"
+      className="scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] border-t border-secondary/20 bg-gradient-to-b from-secondary/12 via-muted/35 to-background py-16 dark:from-secondary/10 dark:via-muted/20 dark:to-background sm:py-20 md:py-28"
     >
       <div className="container">
         <div className="mb-10 flex flex-col gap-6 md:mb-12 md:flex-row md:items-start md:justify-between md:gap-10">

@@ -77,7 +77,7 @@ export function ServicesSection() {
     <section
       ref={root}
       id="services"
-      className="scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] border-t border-border/30 bg-background py-16 sm:py-20 md:py-28"
+      className="scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] border-t border-secondary/20 bg-gradient-to-b from-background via-secondary/10 to-background py-16 dark:via-secondary/10 sm:py-20 md:py-28"
     >
       <div className="container">
         <p className="services-head gsap-hidden mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary">

@@ -60,7 +60,7 @@ export function TestimonialsSection() {
     <section
       ref={root}
       id="testimonials"
-      className="scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] border-t border-border/40 bg-primary/[0.07] py-16 dark:bg-primary/15 sm:py-20 md:py-28"
+      className="scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] border-t border-secondary/25 bg-secondary/12 py-16 dark:bg-secondary/12 sm:py-20 md:py-28"
     >
       <div className="container">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-primary">

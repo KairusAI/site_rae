@@ -53,7 +53,7 @@ export function WhyRaeSection() {
     <section
       ref={root}
       id="about"
-      className="relative min-h-[min(46vh,24rem)] scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] overflow-hidden border-t border-border/40 bg-background py-16 sm:py-20 md:min-h-[min(52vh,28rem)] md:py-28"
+      className="relative min-h-[min(46vh,24rem)] scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] overflow-hidden border-t border-secondary/25 bg-secondary/10 py-16 dark:bg-secondary/8 sm:py-20 md:min-h-[min(52vh,28rem)] md:py-28"
     >
       <div
         className="pointer-events-none absolute inset-0 z-0 hidden overflow-hidden sm:block"

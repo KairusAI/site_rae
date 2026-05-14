@@ -33,7 +33,7 @@ export function Footer() {
   return (
     <footer
       ref={root}
-      className="border-t border-white/15 bg-foreground pt-12 text-background pb-[calc(3rem+env(safe-area-inset-bottom,0px))] shadow-[0_-12px_40px_-24px_rgba(0,0,0,0.15)] dark:border-primary-foreground/15 dark:bg-[hsl(158_38%_11%)] dark:text-[hsl(88_38%_97%)] md:pt-14 md:pb-[calc(3.5rem+env(safe-area-inset-bottom,0px))]"
+      className="border-t border-white/15 bg-foreground pt-12 text-background pb-[calc(3rem+env(safe-area-inset-bottom,0px))] shadow-[0_-12px_40px_-24px_rgba(0,0,0,0.15)] dark:border-white/15 dark:bg-background dark:text-foreground md:pt-14 md:pb-[calc(3.5rem+env(safe-area-inset-bottom,0px))]"
     >
       <div className="container">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
@@ -50,30 +50,30 @@ export function Footer() {
                 />
               </div>
             </div>
-            <p className="text-sm text-background/75 dark:text-[hsl(88_25%_82%)]">
+            <p className="text-sm text-background/75 dark:text-foreground/75">
               Nutrição estratégica corporativa com método, tecnologia e dados. São Paulo + Paraná.
             </p>
-            <p className="mt-3 text-sm text-background/75 dark:text-[hsl(88_25%_82%)]">
+            <p className="mt-3 text-sm text-background/75 dark:text-foreground/75">
               <a
                 href="tel:+5511978603500"
-                className="font-medium text-background hover:text-white hover:underline"
+                className="font-medium text-background hover:text-white hover:underline dark:text-foreground"
               >
                 (11) 97860-3500
               </a>
-              <span className="mx-2 text-background/35">·</span>
+              <span className="mx-2 text-background/35 dark:text-foreground/35">·</span>
               <a
                 href="mailto:contato@raeconsulting.com.br"
-                className="text-background/90 underline-offset-2 hover:text-white hover:underline"
+                className="text-background/90 underline-offset-2 hover:text-white hover:underline dark:text-foreground/90"
               >
                 contato@raeconsulting.com.br
               </a>
             </p>
           </div>
           <div className="footer-col gsap-hidden">
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-background">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-background dark:text-foreground">
               Navegação
             </h3>
-            <ul className="space-y-2 text-sm text-background/75 dark:text-[hsl(88_25%_82%)]">
+            <ul className="space-y-2 text-sm text-background/75 dark:text-foreground/75">
               <li>
                 <a href="#services" className="transition-colors hover:text-white">
                   Serviços
@@ -102,17 +102,17 @@ export function Footer() {
             </ul>
           </div>
           <div className="footer-col gsap-hidden">
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-background">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-background dark:text-foreground">
               Soluções
             </h3>
-            <ul className="space-y-2 text-sm text-background/75 dark:text-[hsl(88_25%_82%)]">
+            <ul className="space-y-2 text-sm text-background/75 dark:text-foreground/75">
               <li>RAE FOR YOU</li>
               <li>RAE For All</li>
               <li>SIPAT RAE</li>
             </ul>
           </div>
           <div className="footer-col gsap-hidden">
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-background">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-background dark:text-foreground">
               Redes
             </h3>
             <div className="flex gap-3">
@@ -120,7 +120,7 @@ export function Footer() {
                 href="https://www.instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/25 bg-white/5 text-background transition-colors hover:border-white/45 hover:bg-white/10 hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/25 bg-white/5 text-background transition-colors hover:border-white/45 hover:bg-white/10 hover:text-white dark:text-foreground"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
@@ -129,14 +129,14 @@ export function Footer() {
                 href="https://www.linkedin.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/25 bg-white/5 text-background transition-colors hover:border-white/45 hover:bg-white/10 hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/25 bg-white/5 text-background transition-colors hover:border-white/45 hover:bg-white/10 hover:text-white dark:text-foreground"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
                 href="mailto:contato@raeconsulting.com.br"
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/25 bg-white/5 text-background transition-colors hover:border-white/45 hover:bg-white/10 hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/25 bg-white/5 text-background transition-colors hover:border-white/45 hover:bg-white/10 hover:text-white dark:text-foreground"
                 aria-label="E-mail"
               >
                 <Mail className="h-5 w-5" />
@@ -144,9 +144,9 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-8 text-center text-xs text-background/65 dark:text-[hsl(88_20%_70%)] md:flex-row md:text-left">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-8 text-center text-xs text-background/65 dark:text-foreground/65 md:flex-row md:text-left">
           <p>© {new Date().getFullYear()} RAE Nutrition. Todos os direitos reservados.</p>
-          <Link to="/" className="text-background/90 transition-colors hover:text-white">
+          <Link to="/" className="text-background/90 transition-colors hover:text-white dark:text-foreground/90">
             Voltar ao início
           </Link>
         </div>

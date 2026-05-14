@@ -57,7 +57,7 @@ export function SolutionSection() {
     <section
       ref={root}
       id="solution"
-      className="scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] border-t border-border/35 bg-accent/45 py-16 dark:bg-accent/18 sm:py-20 md:py-28"
+      className="scroll-mt-[calc(5rem+env(safe-area-inset-top,0px))] border-t border-secondary/25 bg-secondary/20 py-16 dark:bg-secondary/12 sm:py-20 md:py-28"
     >
       <div className="container">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 lg:items-start">
