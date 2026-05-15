@@ -2,6 +2,7 @@ import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { CTASection } from "@/components/sections/CTASection";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { KeyMetricsSection } from "@/components/sections/KeyMetricsSection";
 import { ProblemSection } from "@/components/sections/ProblemSection";
 import { DataSection } from "@/components/sections/DataSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
@@ -18,6 +19,7 @@ export default function Index() {
       <Navbar />
       <main>
         <HeroSection />
+        <KeyMetricsSection />
         <ProblemSection />
         <SipatCompareSection />
         <SolutionSection />
